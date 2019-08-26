@@ -1,8 +1,15 @@
 module.exports = {
   name: 'make:project',
   run: async toolbox => {
-    const { createFoldTests } = toolbox
+    const {
+      createFoldTests,
+      print: { info },
+      parameters
+    } = toolbox
 
-    await createFoldTests()
+    console.log(parameters.first)
+    await createFoldTests(parameters.first)
+    info(`cd ${parameters.first}`)
+    info(`yarn install`)
   }
 }

@@ -1,0 +1,14 @@
+const mongoose = require("mongoose");
+const { db_uri } = require('./vars')
+
+exports.connect = async () => {
+      
+  await mongoose.connect(db_uri, {
+        useNewUrlParser: true,
+        keepAlive: true,
+        useCreateIndex: true
+      });
+      
+
+  return mongoose.connection;
+};

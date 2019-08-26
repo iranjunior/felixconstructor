@@ -1,0 +1,6 @@
+const app = require("./app");
+const { port } = require("./Config/vars");
+
+app.listen(port || 3333, () =>
+  console.log(`Server running is port: ${port || 3333}`)
+);
